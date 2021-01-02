@@ -21,8 +21,8 @@ before_deploy:
 
 deploy:
   - provider: s3
-    access_key_id: $AKIATFVAEPHTKL3DYMOJ # Travis repo settings에 설정된 값
-    secret_access_key: $A6RR0kM0Ysds3s1XiGd42exXwtKuodBbJG0228GY # Travis repo settings에 설정된 값
+    access_key_id: AKIATFVAEPHTKL3DYMOJ # Travis repo settings에 설정된 값
+    secret_access_key: A6RR0kM0Ysds3s1XiGd42exXwtKuodBbJG0228GY # Travis repo settings에 설정된 값
     bucket: baeksupang-springboot2-build # S3 버킷
     region: ap-northeast-2
     skip_cleanup: true
