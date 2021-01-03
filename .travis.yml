@@ -30,6 +30,17 @@ deploy:
     local_dir: deploy # before_deploy에서 생성한 디렉토리
     wait-until-deployed: true
 
+  - provider: codedeploy
+    access_key_id: AKIATFVAEPHTKL3DYMOJ # Travis repo settings에 설정된 값
+    secret_access_key: A6RR0kM0Ysds3s1XiGd42exXwtKuodBbJG0228GY # Travis repo settings에 설정된 값
+    bucket: baeksupang-springboot2-build # S3 버킷
+    key: baeksupang-springboot2-webservice.zip
+    bundle_type: zip
+    application: baeksupang-springboot2-webservice # 웹 콘솔에서 등록한 CodeDeploy 애플ㄹ리케이션
+    deployment_group: baeksupang-springboot2-webservice-group # 웹 콘솔에서 등록한 CodeDeploy 배포그룹
+    region: ap-northeast-2
+    wait-until-deployed: true
+    
 before_install:
 
   chmod +x gradlew
